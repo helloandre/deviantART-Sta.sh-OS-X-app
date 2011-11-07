@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MainMenu.xib */; };
+		3A16F3C513585EA7007BEF92 /* dA.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3A16F3C413585EA7007BEF92 /* dA.icns */; };
+		3A16F3E213586000007BEF92 /* small_icon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3A16F3E113586000007BEF92 /* small_icon.tiff */; };
+		3A16F4311358637D007BEF92 /* StatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A16F42F1358637D007BEF92 /* StatusView.m */; };
+		3A3C7C4D1382F2280065C7CF /* OAuth2Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */; };
+		3A3C7C541382F25C0065C7CF /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C7C531382F25C0065C7CF /* JSON.framework */; };
+		3A4ACAA0139E75870085F090 /* stash-status-offline.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A4ACA9F139E75870085F090 /* stash-status-offline.tif */; };
+		3A555A431368752F000E8DE4 /* stash-status-busy.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A3E1368752F000E8DE4 /* stash-status-busy.tif */; };
+		3A555A441368752F000E8DE4 /* stash-status-click.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A3F1368752F000E8DE4 /* stash-status-click.tif */; };
+		3A555A451368752F000E8DE4 /* stash-status-idle-color.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A401368752F000E8DE4 /* stash-status-idle-color.tif */; };
+		3A555A461368752F000E8DE4 /* stash-status-idle.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A411368752F000E8DE4 /* stash-status-idle.tif */; };
+		3A555A471368752F000E8DE4 /* stash-status-uploading.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A421368752F000E8DE4 /* stash-status-uploading.tif */; };
+		3A555B5B13688373000E8DE4 /* stash-status-empty.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555B5A13688373000E8DE4 /* stash-status-empty.tif */; };
+		3A70E596139D13B4008E6153 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3A70E595139D13B4008E6153 /* dsa_pub.pem */; };
+		3A70E598139D13C3008E6153 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70E597139D13C3008E6153 /* Sparkle.framework */; };
+		3A70E5B8139D147C008E6153 /* OAuth2Client.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */; };
+		3A70E5BE139D148B008E6153 /* JSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A3C7C531382F25C0065C7CF /* JSON.framework */; };
+		3A70E5C7139D148F008E6153 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A70E597139D13C3008E6153 /* Sparkle.framework */; };
+		3AA0A1ED135F158800850B37 /* JAProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0A1EC135F158800850B37 /* JAProcessInfo.m */; };
+		3AA0A3A2135F46CE00850B37 /* NSString+TruncateToWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0A3A1135F46CE00850B37 /* NSString+TruncateToWidth.m */; };
+		3AB50D88146830F200B2858D /* DeviantART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB50D87146830F200B2858D /* DeviantART.framework */; };
+		3AB50D931468377800B2858D /* DeviantART.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AB50D87146830F200B2858D /* DeviantART.framework */; };
+		3AF5B7AE14683BCD007103E6 /* deviantART Sta.sh Uploader.app in Resources */ = {isa = PBXBuildFile; fileRef = 3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */; };
+		77C8280E06725ACE000B614F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* AppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A16F4B113586613007BEF92 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A70E5C7139D148F008E6153 /* Sparkle.framework in CopyFiles */,
+				3A70E5BE139D148B008E6153 /* JSON.framework in CopyFiles */,
+				3A70E5B8139D147C008E6153 /* OAuth2Client.framework in CopyFiles */,
+				3AB50D931468377800B2858D /* DeviantART.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* deviantART_Helper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deviantART_Helper_Prefix.pch; sourceTree = "<group>"; };
+		3A16F3C413585EA7007BEF92 /* dA.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = dA.icns; path = ../Resources/dA.icns; sourceTree = SOURCE_ROOT; };
+		3A16F3E113586000007BEF92 /* small_icon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = small_icon.tiff; path = ../Resources/small_icon.tiff; sourceTree = SOURCE_ROOT; };
+		3A16F42E1358637D007BEF92 /* StatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusView.h; sourceTree = "<group>"; };
+		3A16F42F1358637D007BEF92 /* StatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusView.m; sourceTree = "<group>"; };
+		3A16F43613586409007BEF92 /* OAuth2Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuth2Credentials.h; path = ../DO_NOT_PUBLISH/dAStashUploader/OAuth2Credentials.h; sourceTree = SOURCE_ROOT; };
+		3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2Client.framework; path = /Users/kouiskas/Documents/deviantArt/applications/OSX/Frameworks/OAuth2Client/build/Release/OAuth2Client.framework; sourceTree = "<absolute>"; };
+		3A3C7C531382F25C0065C7CF /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "/Users/kouiskas/Documents/deviantArt/applications/OSX/Frameworks/JSON v2.3.1 (Mac)/build/Release/JSON.framework"; sourceTree = "<absolute>"; };
+		3A4ACA9F139E75870085F090 /* stash-status-offline.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-offline.tif"; path = "../Resources/stash-status-offline.tif"; sourceTree = SOURCE_ROOT; };
+		3A555A3E1368752F000E8DE4 /* stash-status-busy.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-busy.tif"; path = "../Resources/stash-status-busy.tif"; sourceTree = SOURCE_ROOT; };
+		3A555A3F1368752F000E8DE4 /* stash-status-click.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-click.tif"; path = "../Resources/stash-status-click.tif"; sourceTree = SOURCE_ROOT; };
+		3A555A401368752F000E8DE4 /* stash-status-idle-color.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-idle-color.tif"; path = "../Resources/stash-status-idle-color.tif"; sourceTree = SOURCE_ROOT; };
+		3A555A411368752F000E8DE4 /* stash-status-idle.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-idle.tif"; path = "../Resources/stash-status-idle.tif"; sourceTree = SOURCE_ROOT; };
+		3A555A421368752F000E8DE4 /* stash-status-uploading.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-uploading.tif"; path = "../Resources/stash-status-uploading.tif"; sourceTree = SOURCE_ROOT; };
+		3A555B5A13688373000E8DE4 /* stash-status-empty.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-empty.tif"; path = "../Resources/stash-status-empty.tif"; sourceTree = SOURCE_ROOT; };
+		3A70E595139D13B4008E6153 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = ../Resources/dsa_pub.pem; sourceTree = SOURCE_ROOT; };
+		3A70E597139D13C3008E6153 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = /Users/kouiskas/Documents/deviantArt/applications/OSX/Frameworks/Sparkle.framework; sourceTree = "<absolute>"; };
+		3AA0A1EB135F158800850B37 /* JAProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAProcessInfo.h; path = ../Frameworks/JAProcessInfo/JAProcessInfo.h; sourceTree = SOURCE_ROOT; };
+		3AA0A1EC135F158800850B37 /* JAProcessInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAProcessInfo.m; path = ../Frameworks/JAProcessInfo/JAProcessInfo.m; sourceTree = SOURCE_ROOT; };
+		3AA0A3A0135F46CE00850B37 /* NSString+TruncateToWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TruncateToWidth.h"; sourceTree = "<group>"; };
+		3AA0A3A1135F46CE00850B37 /* NSString+TruncateToWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TruncateToWidth.m"; sourceTree = "<group>"; };
+		3AB50D87146830F200B2858D /* DeviantART.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviantART.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/DeviantART.framework"; sourceTree = "<group>"; };
+		3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "deviantART Sta.sh Uploader.app"; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/deviantART Sta.sh Uploader.app"; sourceTree = "<group>"; };
+		77C8280B06725ACE000B614F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		77C8280C06725ACE000B614F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* deviantART Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "deviantART Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				3A3C7C4D1382F2280065C7CF /* OAuth2Client.framework in Frameworks */,
+				3A3C7C541382F25C0065C7CF /* JSON.framework in Frameworks */,
+				3AB50D88146830F200B2858D /* DeviantART.framework in Frameworks */,
+				3A70E598139D13C3008E6153 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77C8280B06725ACE000B614F /* AppDelegate.h */,
+				77C8280C06725ACE000B614F /* AppDelegate.m */,
+				3A16F43613586409007BEF92 /* OAuth2Credentials.h */,
+				3A16F42E1358637D007BEF92 /* StatusView.h */,
+				3A16F42F1358637D007BEF92 /* StatusView.m */,
+				3AA0A3A0135F46CE00850B37 /* NSString+TruncateToWidth.h */,
+				3AA0A3A1135F46CE00850B37 /* NSString+TruncateToWidth.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AB50D87146830F200B2858D /* DeviantART.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */,
+				3A3C7C531382F25C0065C7CF /* JSON.framework */,
+				3A70E597139D13C3008E6153 /* Sparkle.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* deviantART Uploader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* deviantART Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3A16F3F71358622A007BEF92 /* Libraries */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "deviantART Helper";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* deviantART_Helper_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */,
+				3A4ACA9F139E75870085F090 /* stash-status-offline.tif */,
+				3A70E595139D13B4008E6153 /* dsa_pub.pem */,
+				3A555B5A13688373000E8DE4 /* stash-status-empty.tif */,
+				3A555A3E1368752F000E8DE4 /* stash-status-busy.tif */,
+				3A555A3F1368752F000E8DE4 /* stash-status-click.tif */,
+				3A555A401368752F000E8DE4 /* stash-status-idle-color.tif */,
+				3A555A411368752F000E8DE4 /* stash-status-idle.tif */,
+				3A555A421368752F000E8DE4 /* stash-status-uploading.tif */,
+				3A16F3E113586000007BEF92 /* small_icon.tiff */,
+				3A16F3C413585EA7007BEF92 /* dA.icns */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				2F7446970DB6B7EA00F9684A /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A16F3F71358622A007BEF92 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0A1EB135F158800850B37 /* JAProcessInfo.h */,
+				3AA0A1EC135F158800850B37 /* JAProcessInfo.m */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* deviantART Uploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "deviantART Uploader" */;
+			buildPhases = (
+				3A16F4B113586613007BEF92 /* CopyFiles */,
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				3A70E5FB139D1611008E6153 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "deviantART Uploader";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "deviantART Helper";
+			productReference = 8D1107320486CEB800E47090 /* deviantART Uploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "deviantART Uploader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* deviantART Helper */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* deviantART Uploader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */,
+				3A16F3C513585EA7007BEF92 /* dA.icns in Resources */,
+				3A16F3E213586000007BEF92 /* small_icon.tiff in Resources */,
+				3A555A431368752F000E8DE4 /* stash-status-busy.tif in Resources */,
+				3A555A441368752F000E8DE4 /* stash-status-click.tif in Resources */,
+				3A555A451368752F000E8DE4 /* stash-status-idle-color.tif in Resources */,
+				3A555A461368752F000E8DE4 /* stash-status-idle.tif in Resources */,
+				3A555A471368752F000E8DE4 /* stash-status-uploading.tif in Resources */,
+				3A555B5B13688373000E8DE4 /* stash-status-empty.tif in Resources */,
+				3A70E596139D13B4008E6153 /* dsa_pub.pem in Resources */,
+				3A4ACAA0139E75870085F090 /* stash-status-offline.tif in Resources */,
+				3AF5B7AE14683BCD007103E6 /* deviantART Sta.sh Uploader.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A70E5FB139D1611008E6153 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n\t/usr/local/bin/dmgcanvas -t deviantART_Uploader.dmgCanvas -o \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\"\n\tfilesize=`ls -al \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\" | awk '{split($0,array,\" \")} END{print array[5]}'`\n\tchecksum=`openssl dgst -sha1 -binary < \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\" | openssl dgst -dss1 -sign \"../DO_NOT_PUBLISH/dsa_priv.pem\" | openssl enc -base64`\n\techo \"$filesize $checksum\" > \"./installer/info-$CUSTOMVERSION.txt\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				77C8280E06725ACE000B614F /* AppDelegate.m in Sources */,
+				3A16F4311358637D007BEF92 /* StatusView.m in Sources */,
+				3AA0A1ED135F158800850B37 /* JAProcessInfo.m in Sources */,
+				3AA0A3A2135F46CE00850B37 /* NSString+TruncateToWidth.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2F7446970DB6B7EA00F9684A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F7446980DB6B7EA00F9684A /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26FC0A850875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Debug\"",
+					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Debug\"",
+					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Release\"",
+					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Release\"",
+					"\"$(SRCROOT)/../Frameworks\"",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = deviantART_Helper_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "deviantART Uploader";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26FC0A860875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Debug\"",
+					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Debug\"",
+					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Release\"",
+					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Release\"",
+					"\"$(SRCROOT)/../Frameworks\"",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = deviantART_Helper_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "deviantART Uploader";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26FC0A890875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CUSTOMVERSION = 1.35;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		26FC0A8A0875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CUSTOMVERSION = 1.35;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "deviantART Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A850875C7B200E6366F /* Debug */,
+				26FC0A860875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "deviantART Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A890875C7B200E6366F /* Debug */,
+				26FC0A8A0875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
