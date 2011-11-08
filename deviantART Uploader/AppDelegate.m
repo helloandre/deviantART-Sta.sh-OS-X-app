@@ -98,7 +98,10 @@
     [super dealloc];
 }
 
-- (void) applicationDidFinishLaunching:(NSNotification*) notice {	
+- (void) applicationDidFinishLaunching:(NSNotification*) notice {
+    // Lion doesn't like the way we use the Dock icon, it's all slow, hangs and sometimes just ignores drags :( until this can be figured out, disable the dock icon feature in anything > leopard
+    BOOL isLeopard = [self isLeopard];
+    
 	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 	
 	if ([defaults boolForKey:@"isStatusIconColored"]) {
@@ -107,7 +110,7 @@
 		[colorSwitch setState:NSOnState];
 	}
 	
-	if ([defaults boolForKey:@"isDockIconVisible"]) {
+	if (isLeopard && [defaults boolForKey:@"isDockIconVisible"]) {
 		JAProcessInfo *procInfo = [[JAProcessInfo alloc] init];
 		[procInfo obtainFreshProcessList];
 		
@@ -125,15 +128,19 @@
 	[statusItem setMenu: statusMenu];
 	[statusItem setView: statusView];
 		
-	if ([defaults boolForKey:@"isStatusIconHidden"]) {
+	if (!isLeopard && [defaults boolForKey:@"isStatusIconHidden"]) {
 		[statusView setHidden:YES];
 	}
-	
-	if ([defaults boolForKey:@"isDockIconVisible"] && ![defaults boolForKey:@"isStatusIconHidden"]) {
-		[iconMenu selectItem:bothIcons];
-	} else if ([defaults boolForKey:@"isDockIconVisible"]) {
-		[iconMenu selectItem:dockIconOnly];
-	}
+    
+    if (isLeopard) {
+        if ([defaults boolForKey:@"isDockIconVisible"] && ![defaults boolForKey:@"isStatusIconHidden"]) {
+            [iconMenu selectItem:bothIcons];
+        } else if ([defaults boolForKey:@"isDockIconVisible"]) {
+            [iconMenu selectItem:dockIconOnly];
+        }     
+    } else {
+        [iconMenu setHidden:TRUE];
+    }
 	
 	[globalNotificationCenter postNotificationName:@"DAHelperStarted" object:nil userInfo:nil];
 	
@@ -199,11 +206,11 @@
 	NSString *title;
 
 	if (localUploadCount == 0) {
-		title = [NSString stringWithFormat:@"All deviations up to date"];
+		title = [NSString stringWithFormat:@"All files up to date"];
 	} else if (localUploadCount == 1) {
-		title = [NSString stringWithFormat:@"%d deviation uploading", localUploadCount];
+		title = [NSString stringWithFormat:@"%d file uploading", localUploadCount];
 	} else {
-		title = [NSString stringWithFormat:@"%d deviations uploading", localUploadCount];
+		title = [NSString stringWithFormat:@"%d files uploading", localUploadCount];
 	}
 	
 	[uploadStatus setTitle:title];
@@ -299,6 +306,11 @@
 
 - (void) uploadsDone {
 	[globalNotificationCenter postNotificationName:@"DAHelperUploadsDone" object:nil userInfo:nil];
+    
+    if (localUploadCount > 0) {
+        NSSound *systemSound = [NSSound soundNamed:@"Glass"];
+        [systemSound play];
+    }
 	
 	localUploadCount = 0;
 	
@@ -415,6 +427,15 @@
 		[defaults setBool:NO forKey:@"isDockIconVisible"];
 	}
 	[NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(openPreferences:) userInfo:nil repeats: NO];
+}
+
+- (BOOL) isLeopard {
+    SInt32 major, minor, bugfix;
+    Gestalt(gestaltSystemVersionMajor, &major);
+    Gestalt(gestaltSystemVersionMinor, &minor);
+    Gestalt(gestaltSystemVersionBugFix, &bugfix);
+    
+    return (major == 10 && minor == 6);
 }
 
 @end

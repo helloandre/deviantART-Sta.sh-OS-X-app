@@ -71,4 +71,6 @@
 - (IBAction) toggleStatusMenuColored:(id)sender;
 - (IBAction) toggleIconOption:(id)sender;
 
+- (BOOL) isLeopard;
+
 @end

@@ -30,6 +30,7 @@
 		3AB50D88146830F200B2858D /* DeviantART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB50D87146830F200B2858D /* DeviantART.framework */; };
 		3AB50D931468377800B2858D /* DeviantART.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AB50D87146830F200B2858D /* DeviantART.framework */; };
 		3AF5B7AE14683BCD007103E6 /* deviantART Sta.sh Uploader.app in Resources */ = {isa = PBXBuildFile; fileRef = 3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */; };
+		3AF6DF6214696D5600EE9394 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AF6DF6114696D5600EE9394 /* LICENSE */; };
 		77C8280E06725ACE000B614F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -82,6 +83,7 @@
 		3AA0A3A1135F46CE00850B37 /* NSString+TruncateToWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TruncateToWidth.m"; sourceTree = "<group>"; };
 		3AB50D87146830F200B2858D /* DeviantART.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviantART.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/DeviantART.framework"; sourceTree = "<group>"; };
 		3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "deviantART Sta.sh Uploader.app"; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/deviantART Sta.sh Uploader.app"; sourceTree = "<group>"; };
+		3AF6DF6114696D5600EE9394 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../Resources/LICENSE; sourceTree = "<group>"; };
 		77C8280B06725ACE000B614F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3AF6DF6114696D5600EE9394 /* LICENSE */,
 				3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */,
 				3A4ACA9F139E75870085F090 /* stash-status-offline.tif */,
 				3A70E595139D13B4008E6153 /* dsa_pub.pem */,
@@ -276,6 +279,7 @@
 				3A70E596139D13B4008E6153 /* dsa_pub.pem in Resources */,
 				3A4ACAA0139E75870085F090 /* stash-status-offline.tif in Resources */,
 				3AF5B7AE14683BCD007103E6 /* deviantART Sta.sh Uploader.app in Resources */,
+				3AF6DF6214696D5600EE9394 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n\t/usr/local/bin/dmgcanvas -t deviantART_Uploader.dmgCanvas -o \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\"\n\tfilesize=`ls -al \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\" | awk '{split($0,array,\" \")} END{print array[5]}'`\n\tchecksum=`openssl dgst -sha1 -binary < \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\" | openssl dgst -dss1 -sign \"../DO_NOT_PUBLISH/dsa_priv.pem\" | openssl enc -base64`\n\techo \"$filesize $checksum\" > \"./installer/info-$CUSTOMVERSION.txt\"\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n\t/usr/local/bin/dmgcanvas -t deviantART_Uploader.dmgCanvas -o \"./installer/deviantART_Uploader-$CUSTOMVERSION.dmg\"\n\tfilesize=`ls -al \"/Users/kouiskas/Documents/deviantArt/applications/OSX/deviantART Uploader/installer/deviantART_Uploader-$CUSTOMVERSION.dmg\" | awk '{split($0,array,\" \")} END{print array[5]}'`\n\tchecksum=`openssl dgst -sha1 -binary < \"/Users/kouiskas/Documents/deviantArt/applications/OSX/deviantART Uploader/installer/deviantART_Uploader-$CUSTOMVERSION.dmg\" | openssl dgst -dss1 -sign \"/Users/kouiskas/Documents/deviantArt/applications/OSX/DO_NOT_PUBLISH/dsa_priv.pem\" | openssl enc -base64`\n\techo \"$filesize $checksum\" > \"/Users/kouiskas/Documents/deviantArt/applications/OSX/deviantART Uploader/installer/info-$CUSTOMVERSION.txt\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
