@@ -7,6 +7,10 @@ This project requires our sample Cocoa framework: https://github.com/kouiskas/de
 
 You can download a fully working version of this app there: http://kouiskas.deviantart.com/art/OS-X-Sta-sh-195250264
 
+Screenshot:
+
+![app adds itself to the OS X status bar](http://st.deviantart.net/kouiskas/os_x_app_screenshot.png)
+
 BSD License
 ===========
 
