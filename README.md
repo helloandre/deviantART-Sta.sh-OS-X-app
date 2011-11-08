@@ -9,7 +9,7 @@ You can download a fully working version of this app there: http://kouiskas.devi
 
 Screenshot:
 
-![app adds itself to the OS X status bar](http://st.deviantart.net/kouiskas/os_x_app_screenshot.png)
+![app adds itself to the OS X status bar](http://st.deviantart.net/kouiskas/os_x_app_screenshot.png?2)
 
 BSD License
 ===========
