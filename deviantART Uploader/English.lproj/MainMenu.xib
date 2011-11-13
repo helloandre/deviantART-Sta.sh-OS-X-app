@@ -58,7 +58,6 @@
 				<int key="NSvFlags">268</int>
 				<string key="NSFrameSize">{26, 16}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView"/>
 				<string key="NSClassName">StatusView</string>
 			</object>
 			<object class="NSMenu" id="34015014">
@@ -134,7 +133,7 @@
 			<object class="NSWindowTemplate" id="66492576">
 				<int key="NSWindowStyleMask">4099</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{339, 805}, {339, 134}}</string>
+				<string key="NSWindowRect">{{339, 805}, {339, 154}}</string>
 				<int key="NSWTFlags">1685585920</int>
 				<string key="NSWindowTitle">Preferences</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -150,6 +149,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{14, 12}, {206, 32}}</string>
 							<reference key="NSSuperview" ref="313923854"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="228453116">
@@ -173,9 +173,10 @@
 						<object class="NSButton" id="558810719">
 							<reference key="NSNextResponder" ref="313923854"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 58}, {198, 18}}</string>
+							<string key="NSFrame">{{18, 78}, {198, 18}}</string>
 							<reference key="NSSuperview" ref="313923854"/>
-							<reference key="NSNextKeyView" ref="716361806"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="153962591"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="533753123">
 								<int key="NSCellFlags">67239424</int>
@@ -185,13 +186,37 @@
 								<reference key="NSControlView" ref="558810719"/>
 								<int key="NSButtonFlags">1211912703</int>
 								<int key="NSButtonFlags2">2</int>
-								<object class="NSCustomResource" key="NSNormalImage">
+								<object class="NSCustomResource" key="NSNormalImage" id="683138978">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSSwitch</string>
 								</object>
-								<object class="NSButtonImageSource" key="NSAlternateImage">
+								<object class="NSButtonImageSource" key="NSAlternateImage" id="172662456">
 									<string key="NSImageName">NSSwitch</string>
 								</object>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+						</object>
+						<object class="NSButton" id="153962591">
+							<reference key="NSNextResponder" ref="313923854"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{18, 58}, {234, 18}}</string>
+							<reference key="NSSuperview" ref="313923854"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="716361806"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="571911522">
+								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags2">0</int>
+								<string key="NSContents">Upload screenshots automatically</string>
+								<reference key="NSSupport" ref="400521177"/>
+								<reference key="NSControlView" ref="153962591"/>
+								<int key="NSButtonFlags">1211912703</int>
+								<int key="NSButtonFlags2">2</int>
+								<reference key="NSNormalImage" ref="683138978"/>
+								<reference key="NSAlternateImage" ref="172662456"/>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
@@ -201,8 +226,9 @@
 						<object class="NSPopUpButton" id="151810825">
 							<reference key="NSNextResponder" ref="313923854"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 90}, {305, 26}}</string>
+							<string key="NSFrame">{{17, 110}, {305, 26}}</string>
 							<reference key="NSSuperview" ref="313923854"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="558810719"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSPopUpButtonCell" key="NSCell" id="648795583">
@@ -266,8 +292,9 @@
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{339, 134}</string>
+					<string key="NSFrameSize">{339, 154}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="151810825"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1050, 1658}}</string>
@@ -449,6 +476,22 @@
 					</object>
 					<int key="connectionID">597</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">screenshotsSwitch</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="153962591"/>
+					</object>
+					<int key="connectionID">601</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleScreenshots:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="153962591"/>
+					</object>
+					<int key="connectionID">602</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -558,6 +601,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="151810825"/>
 							<reference ref="558810719"/>
+							<reference ref="153962591"/>
 							<reference ref="716361806"/>
 						</object>
 						<reference key="parent" ref="66492576"/>
@@ -644,6 +688,20 @@
 						<reference key="object" ref="458806672"/>
 						<reference key="parent" ref="790593406"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">598</int>
+						<reference key="object" ref="153962591"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="571911522"/>
+						</object>
+						<reference key="parent" ref="313923854"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">599</int>
+						<reference key="object" ref="571911522"/>
+						<reference key="parent" ref="153962591"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -680,6 +738,8 @@
 					<string>585.IBPluginDependency</string>
 					<string>586.IBPluginDependency</string>
 					<string>587.IBPluginDependency</string>
+					<string>598.IBPluginDependency</string>
+					<string>599.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -720,6 +780,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -734,7 +796,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">597</int>
+			<int key="maxID">602</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -753,10 +815,12 @@
 							<string>openUpdates:</string>
 							<string>requestLogout:</string>
 							<string>toggleIconOption:</string>
+							<string>toggleScreenshots:</string>
 							<string>toggleStatusMenuColored:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -778,6 +842,7 @@
 							<string>openUpdates:</string>
 							<string>requestLogout:</string>
 							<string>toggleIconOption:</string>
+							<string>toggleScreenshots:</string>
 							<string>toggleStatusMenuColored:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -811,6 +876,10 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">toggleScreenshots:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">toggleStatusMenuColored:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -828,6 +897,7 @@
 							<string>iconView</string>
 							<string>logoutButton</string>
 							<string>preferences</string>
+							<string>screenshotsSwitch</string>
 							<string>statusIconOnly</string>
 							<string>statusMenu</string>
 							<string>statusView</string>
@@ -843,6 +913,7 @@
 							<string>NSView</string>
 							<string>NSButton</string>
 							<string>NSWindow</string>
+							<string>NSButton</string>
 							<string>NSMenuItem</string>
 							<string>NSMenu</string>
 							<string>StatusView</string>
@@ -861,6 +932,7 @@
 							<string>iconView</string>
 							<string>logoutButton</string>
 							<string>preferences</string>
+							<string>screenshotsSwitch</string>
 							<string>statusIconOnly</string>
 							<string>statusMenu</string>
 							<string>statusView</string>
@@ -899,6 +971,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">preferences</string>
 								<string key="candidateClassName">NSWindow</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">screenshotsSwitch</string>
+								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">statusIconOnly</string>

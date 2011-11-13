@@ -6,7 +6,7 @@
 #import <Sparkle/Sparkle.h>
 #import "StatusView.h"
 
-@interface AppDelegate : NSObject<DAStashUploaderDelegate> {
+@interface AppDelegate : NSObject<DAStashUploaderDelegate, NSMetadataQueryDelegate> {
 	SUUpdater *updater;
 	DAStashUploader *dAStashUploader;
 	NSMutableDictionary *uploadFileNames;
@@ -28,7 +28,11 @@
 	BOOL dontShutdownMainApp;
 	BOOL delayedOpenPreferences;
 	NSInteger originalMenuCount;
-	
+    
+    // Screenshots
+    NSMetadataQuery *metadataQuery;
+    NSInteger lastMetadataQuerySize;
+    NSMutableDictionary *screenshotsToUpload;
 	
 	// Preferences
 	IBOutlet NSWindow *preferences;
@@ -39,6 +43,7 @@
 	IBOutlet NSMenuItem *statusIconOnly;
 	IBOutlet NSMenuItem *dockIconOnly;
 	IBOutlet NSMenuItem *bothIcons;
+    IBOutlet NSButton *screenshotsSwitch;
 }
 
 + (void) addToLoginItems:(NSURL *)itemURL enabled:(BOOL)enabled;
@@ -69,8 +74,12 @@
 // Preferences
 - (IBAction) requestLogout:(id)sender;
 - (IBAction) toggleStatusMenuColored:(id)sender;
+- (IBAction) toggleScreenshots:(id)sender;
 - (IBAction) toggleIconOption:(id)sender;
 
 - (BOOL) isLeopard;
+
+// Screenshots
+- (void) metadataQueryUpdated:(NSNotification *)note;
 
 @end

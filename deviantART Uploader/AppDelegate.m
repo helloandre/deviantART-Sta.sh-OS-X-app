@@ -80,6 +80,19 @@
 		
 		// Observe message that the share workspace sends after launching another app
 		[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(mainAppLaunched:) name:NSWorkspaceDidLaunchApplicationNotification object:nil];
+        
+        // Observe screenshots
+        
+        metadataQuery = [[NSMetadataQuery alloc] init];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataQueryUpdated:) name:NSMetadataQueryDidUpdateNotification object:metadataQuery];
+        
+        [metadataQuery setDelegate:self];
+        [metadataQuery setSearchScopes:[NSArray arrayWithObjects:[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"],nil]];
+        [metadataQuery setPredicate:[NSPredicate predicateWithFormat:@"kMDItemIsScreenCapture = 1"]];
+        [metadataQuery startQuery];
+        
+        screenshotsToUpload = [[NSMutableDictionary alloc] init];
 	}
 	
 	return self;
@@ -94,6 +107,10 @@
 	[dAStashUploader release];
 	[statusItem release];
 	[fileManager release];
+    [metadataQuery stopQuery];
+    [metadataQuery setDelegate:nil];
+    [metadataQuery release];
+    [screenshotsToUpload release];
 	
     [super dealloc];
 }
@@ -108,6 +125,10 @@
 		statusView.colored = YES;
 		[statusView	setNeedsDisplay:YES];
 		[colorSwitch setState:NSOnState];
+	}
+    
+    if (![defaults boolForKey:@"areScreenshotsNotUploaded"]) {
+		[screenshotsSwitch setState:NSOnState];
 	}
 	
 	if (isLeopard && [defaults boolForKey:@"isDockIconVisible"]) {
@@ -404,6 +425,12 @@
 	[defaults setBool:toggled forKey:@"isStatusIconColored"];
 }
 
+- (IBAction) toggleScreenshots:(id)sender {
+	BOOL toggled = ([sender state] != NSOnState);
+	
+	[defaults setBool:toggled forKey:@"areScreenshotsNotUploaded"];
+}
+
 - (IBAction) toggleIconOption:(id)sender {
 	if ([statusIconOnly state] == 1 || [bothIcons state] == 1) {
 		[statusView setHidden:NO];
@@ -436,6 +463,31 @@
     Gestalt(gestaltSystemVersionBugFix, &bugfix);
     
     return (major == 10 && minor == 6);
+}
+
+- (void) metadataQueryUpdated:(NSNotification *)note {
+    NSInteger previousLastSize = lastMetadataQuerySize;
+    lastMetadataQuerySize = [metadataQuery resultCount];
+    
+    if ([defaults boolForKey:@"areScreenshotsNotUploaded"]) {
+        return;
+    }
+    
+    if ([metadataQuery resultCount] > 0) {
+        for (long i = previousLastSize - 1; i <= [metadataQuery resultCount] - 1; i++) {
+            NSMetadataItem *mditem = [metadataQuery resultAtIndex:i];
+            NSFileManager * myManager = [NSFileManager defaultManager];
+            NSString *filePath = [mditem valueForAttribute:(NSString *)kMDItemPath];
+            NSError * err;
+            NSDictionary * fileDict = [myManager attributesOfItemAtPath:filePath error:&err];
+            NSDate * fileDate = [fileDict objectForKey:@"NSFileModificationDate"];
+            
+            if ([fileDate timeIntervalSinceNow] > -10.0 && [screenshotsToUpload valueForKey:filePath] == nil) { // If file was last modified less than 10 seconds ago and hasn't been queued yet
+                [screenshotsToUpload setValue:filePath forKey: filePath];
+                [dAStashUploader queueFileName:filePath];
+            }
+        }
+    }
 }
 
 @end
