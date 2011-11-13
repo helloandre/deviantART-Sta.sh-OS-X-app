@@ -54,10 +54,9 @@
 				<string key="NSClassName">NSFontManager</string>
 			</object>
 			<object class="NSCustomView" id="23181385">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<string key="NSFrameSize">{26, 16}</string>
-				<reference key="NSSuperview"/>
 				<string key="NSClassName">StatusView</string>
 			</object>
 			<object class="NSMenu" id="34015014">

@@ -9,7 +9,7 @@
     NSMutableString *resultString = [[self mutableCopy] autorelease];
     NSRange range = {resultString.length-1, 1};
 	
-	BOOL truncated;
+	BOOL truncated = NO;
 	
     while ([resultString sizeWithAttributes:attributes].width > width) {
         [resultString deleteCharactersInRange:range];
