@@ -217,7 +217,7 @@
 			[self queueFileNames: realsubpaths fromDrag:fromDrag];
 		} else {
 			[uploadFileNames setValue:newFileName forKey: newFileName];
-			[dAStashUploader queueFileName:newFileName];
+			[dAStashUploader queueFileName:newFileName folder:@"Desktop Uploads"];
 		}
 	}
 	[files release];
@@ -363,7 +363,7 @@
 
 - (void) queueFileName:(NSNotification*) msg {
 	NSString *fileName = [msg object];
-	[dAStashUploader queueFileName:fileName];
+	[dAStashUploader queueFileName:fileName folder:@"Desktop Uploads"];
 }
 
 - (void) refreshUploadInfo:(NSNotification*) msg {
@@ -465,6 +465,8 @@
     return (major == 10 && minor == 6);
 }
 
+// Screenshots
+
 - (void) metadataQueryUpdated:(NSNotification *)note {
     NSInteger previousLastSize = lastMetadataQuerySize;
     lastMetadataQuerySize = [metadataQuery resultCount];
@@ -484,7 +486,7 @@
             
             if ([fileDate timeIntervalSinceNow] > -10.0 && [screenshotsToUpload valueForKey:filePath] == nil) { // If file was last modified less than 10 seconds ago and hasn't been queued yet
                 [screenshotsToUpload setValue:filePath forKey: filePath];
-                [dAStashUploader queueFileName:filePath];
+                [dAStashUploader queueFileName:filePath folder: @"Screenshot Uploads"];
             }
         }
     }
