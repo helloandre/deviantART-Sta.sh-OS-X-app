@@ -44,6 +44,7 @@
 	IBOutlet NSMenuItem *dockIconOnly;
 	IBOutlet NSMenuItem *bothIcons;
     IBOutlet NSButton *screenshotsSwitch;
+    IBOutlet NSButton *deleteScreenshotsSwitch;
 }
 
 + (void) addToLoginItems:(NSURL *)itemURL enabled:(BOOL)enabled;
@@ -75,6 +76,7 @@
 - (IBAction) requestLogout:(id)sender;
 - (IBAction) toggleStatusMenuColored:(id)sender;
 - (IBAction) toggleScreenshots:(id)sender;
+- (IBAction) toggleDeleteScreenshots:(id)sender;
 - (IBAction) toggleIconOption:(id)sender;
 
 - (BOOL) isLeopard;

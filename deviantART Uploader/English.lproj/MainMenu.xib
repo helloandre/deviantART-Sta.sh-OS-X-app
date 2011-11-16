@@ -54,9 +54,11 @@
 				<string key="NSClassName">NSFontManager</string>
 			</object>
 			<object class="NSCustomView" id="23181385">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<string key="NSFrameSize">{26, 16}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<string key="NSClassName">StatusView</string>
 			</object>
 			<object class="NSMenu" id="34015014">
@@ -132,7 +134,7 @@
 			<object class="NSWindowTemplate" id="66492576">
 				<int key="NSWindowStyleMask">4099</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{339, 805}, {339, 154}}</string>
+				<string key="NSWindowRect">{{339, 805}, {339, 185}}</string>
 				<int key="NSWTFlags">1685585920</int>
 				<string key="NSWindowTitle">Preferences</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -172,7 +174,7 @@
 						<object class="NSButton" id="558810719">
 							<reference key="NSNextResponder" ref="313923854"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 78}, {198, 18}}</string>
+							<string key="NSFrame">{{18, 109}, {198, 18}}</string>
 							<reference key="NSSuperview" ref="313923854"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="153962591"/>
@@ -201,10 +203,10 @@
 						<object class="NSButton" id="153962591">
 							<reference key="NSNextResponder" ref="313923854"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 58}, {234, 18}}</string>
+							<string key="NSFrame">{{18, 78}, {234, 18}}</string>
 							<reference key="NSSuperview" ref="313923854"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="716361806"/>
+							<reference key="NSNextKeyView" ref="53870303"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="571911522">
 								<int key="NSCellFlags">67239424</int>
@@ -222,10 +224,34 @@
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
+						<object class="NSButton" id="53870303">
+							<reference key="NSNextResponder" ref="313923854"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{18, 58}, {280, 18}}</string>
+							<reference key="NSSuperview" ref="313923854"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="716361806"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="294658639">
+								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags2">0</int>
+								<string key="NSContents">Delete local screenshot files after upload</string>
+								<reference key="NSSupport" ref="400521177"/>
+								<reference key="NSControlView" ref="53870303"/>
+								<int key="NSButtonFlags">1211912703</int>
+								<int key="NSButtonFlags2">2</int>
+								<reference key="NSNormalImage" ref="683138978"/>
+								<reference key="NSAlternateImage" ref="172662456"/>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+						</object>
 						<object class="NSPopUpButton" id="151810825">
 							<reference key="NSNextResponder" ref="313923854"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 110}, {305, 26}}</string>
+							<string key="NSFrame">{{17, 141}, {305, 26}}</string>
 							<reference key="NSSuperview" ref="313923854"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="558810719"/>
@@ -291,12 +317,12 @@
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{339, 154}</string>
+					<string key="NSFrameSize">{339, 185}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="151810825"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1050, 1658}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -491,6 +517,22 @@
 					</object>
 					<int key="connectionID">602</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">deleteScreenshotsSwitch</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="53870303"/>
+					</object>
+					<int key="connectionID">606</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleDeleteScreenshots:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="53870303"/>
+					</object>
+					<int key="connectionID">607</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -600,8 +642,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="151810825"/>
 							<reference ref="558810719"/>
-							<reference ref="153962591"/>
 							<reference ref="716361806"/>
+							<reference ref="153962591"/>
+							<reference ref="53870303"/>
 						</object>
 						<reference key="parent" ref="66492576"/>
 					</object>
@@ -701,6 +744,20 @@
 						<reference key="object" ref="571911522"/>
 						<reference key="parent" ref="153962591"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">603</int>
+						<reference key="object" ref="53870303"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="294658639"/>
+						</object>
+						<reference key="parent" ref="313923854"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">604</int>
+						<reference key="object" ref="294658639"/>
+						<reference key="parent" ref="53870303"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -739,6 +796,8 @@
 					<string>587.IBPluginDependency</string>
 					<string>598.IBPluginDependency</string>
 					<string>599.IBPluginDependency</string>
+					<string>603.IBPluginDependency</string>
+					<string>604.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -781,6 +840,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -795,7 +856,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">602</int>
+			<int key="maxID">607</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -813,12 +874,14 @@
 							<string>openStash:</string>
 							<string>openUpdates:</string>
 							<string>requestLogout:</string>
+							<string>toggleDeleteScreenshots:</string>
 							<string>toggleIconOption:</string>
 							<string>toggleScreenshots:</string>
 							<string>toggleStatusMenuColored:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -840,6 +903,7 @@
 							<string>openStash:</string>
 							<string>openUpdates:</string>
 							<string>requestLogout:</string>
+							<string>toggleDeleteScreenshots:</string>
 							<string>toggleIconOption:</string>
 							<string>toggleScreenshots:</string>
 							<string>toggleStatusMenuColored:</string>
@@ -871,6 +935,10 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">toggleDeleteScreenshots:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">toggleIconOption:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -890,6 +958,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>bothIcons</string>
 							<string>colorSwitch</string>
+							<string>deleteScreenshotsSwitch</string>
 							<string>dockIconOnly</string>
 							<string>iconMenu</string>
 							<string>iconProgressBar</string>
@@ -905,6 +974,7 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSMenuItem</string>
+							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSMenuItem</string>
 							<string>NSPopUpButton</string>
@@ -925,6 +995,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>bothIcons</string>
 							<string>colorSwitch</string>
+							<string>deleteScreenshotsSwitch</string>
 							<string>dockIconOnly</string>
 							<string>iconMenu</string>
 							<string>iconProgressBar</string>
@@ -945,6 +1016,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">colorSwitch</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">deleteScreenshotsSwitch</string>
 								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">

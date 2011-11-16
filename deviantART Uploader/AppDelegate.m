@@ -47,6 +47,8 @@
 
 - (id) init {
 	if (self = [super init]) {
+        fileManager = [[NSFileManager defaultManager] retain];
+        
 		updater = [SUUpdater updaterForBundle:[NSBundle bundleForClass:[self class]]];
 		[updater setDelegate:self];
 		
@@ -88,7 +90,18 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataQueryUpdated:) name:NSMetadataQueryDidUpdateNotification object:metadataQuery];
         
         [metadataQuery setDelegate:self];
-        [metadataQuery setSearchScopes:[NSArray arrayWithObjects:[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"],nil]];
+        
+        NSString *screenshotsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
+        
+        NSDictionary *appleDefaults = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.screencapture"];
+        
+        if ([appleDefaults valueForKey:@"location"] != nil) {
+            screenshotsPath = [appleDefaults valueForKey:@"location"];
+        }
+        
+        NSLog(@"Listening for screenshots at: %@", screenshotsPath);
+        
+        [metadataQuery setSearchScopes:[NSArray arrayWithObjects:screenshotsPath,nil]];
         [metadataQuery setPredicate:[NSPredicate predicateWithFormat:@"kMDItemIsScreenCapture = 1"]];
         [metadataQuery startQuery];
         
@@ -129,6 +142,13 @@
     
     if (![defaults boolForKey:@"areScreenshotsNotUploaded"]) {
 		[screenshotsSwitch setState:NSOnState];
+        [deleteScreenshotsSwitch setEnabled:YES];
+	} else {
+        [deleteScreenshotsSwitch setEnabled:NO];
+    }
+    
+    if ([defaults boolForKey:@"areScreenshotsDeletedAfterUpload"]) {
+		[deleteScreenshotsSwitch setState:NSOnState];
 	}
 	
 	if (isLeopard && [defaults boolForKey:@"isDockIconVisible"]) {
@@ -294,6 +314,11 @@
 	[generalPasteboard declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
 	[generalPasteboard clearContents];
 	[generalPasteboard setString:deviationURL forType:NSStringPboardType];
+    
+    if ([defaults boolForKey:@"areScreenshotsDeletedAfterUpload"] && [screenshotsToUpload valueForKey:lastFileName] != nil) {
+        NSError *err = nil;
+        [fileManager removeItemAtPath:lastFileName error:&err];
+    }
 	
 	NSString *fileNameOnly = [lastFileName lastPathComponent];
 	
@@ -429,6 +454,13 @@
 	BOOL toggled = ([sender state] != NSOnState);
 	
 	[defaults setBool:toggled forKey:@"areScreenshotsNotUploaded"];
+    [deleteScreenshotsSwitch setEnabled:!toggled];
+}
+
+- (IBAction) toggleDeleteScreenshots:(id)sender {
+	BOOL toggled = ([sender state] == NSOnState);
+	
+	[defaults setBool:toggled forKey:@"areScreenshotsDeletedAfterUpload"];
 }
 
 - (IBAction) toggleIconOption:(id)sender {
@@ -478,10 +510,9 @@
     if ([metadataQuery resultCount] > 0) {
         for (long i = previousLastSize - 1; i <= [metadataQuery resultCount] - 1; i++) {
             NSMetadataItem *mditem = [metadataQuery resultAtIndex:i];
-            NSFileManager * myManager = [NSFileManager defaultManager];
             NSString *filePath = [mditem valueForAttribute:(NSString *)kMDItemPath];
             NSError * err;
-            NSDictionary * fileDict = [myManager attributesOfItemAtPath:filePath error:&err];
+            NSDictionary * fileDict = [fileManager attributesOfItemAtPath:filePath error:&err];
             NSDate * fileDate = [fileDict objectForKey:@"NSFileModificationDate"];
             
             if ([fileDate timeIntervalSinceNow] > -10.0 && [screenshotsToUpload valueForKey:filePath] == nil) { // If file was last modified less than 10 seconds ago and hasn't been queued yet
