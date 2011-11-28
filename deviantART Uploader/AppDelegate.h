@@ -5,6 +5,7 @@
 #import <DeviantART/DA.h>
 #import <Sparkle/Sparkle.h>
 #import "StatusView.h"
+#import "Reachability.h"
 
 @interface AppDelegate : NSObject<DAStashUploaderDelegate, NSMetadataQueryDelegate> {
 	SUUpdater *updater;
@@ -28,11 +29,6 @@
 	BOOL dontShutdownMainApp;
 	BOOL delayedOpenPreferences;
 	NSInteger originalMenuCount;
-    
-    // Screenshots
-    NSMetadataQuery *metadataQuery;
-    NSInteger lastMetadataQuerySize;
-    NSMutableDictionary *screenshotsToUpload;
 	
 	// Preferences
 	IBOutlet NSWindow *preferences;
@@ -45,6 +41,14 @@
 	IBOutlet NSMenuItem *bothIcons;
     IBOutlet NSButton *screenshotsSwitch;
     IBOutlet NSButton *deleteScreenshotsSwitch;
+    
+    // Screenshots
+    NSMetadataQuery *metadataQuery;
+    NSInteger lastMetadataQuerySize;
+    NSMutableDictionary *screenshotsToUpload;
+    
+    // Reachability
+    Reachability* hostReach;
 }
 
 + (void) addToLoginItems:(NSURL *)itemURL enabled:(BOOL)enabled;
@@ -69,8 +73,6 @@
 - (void) uploadsDone;
 - (void) loggedout;
 - (void) loggedin;
-- (void) internetOnline;
-- (void) internetOffline;
 
 // Preferences
 - (IBAction) requestLogout:(id)sender;
@@ -83,5 +85,8 @@
 
 // Screenshots
 - (void) metadataQueryUpdated:(NSNotification *)note;
+
+// Reachability
+- (void) reachabilityChanged:(NSNotification* )note;
 
 @end

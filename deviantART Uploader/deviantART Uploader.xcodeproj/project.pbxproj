@@ -11,7 +11,8 @@
 		3A16F3C513585EA7007BEF92 /* dA.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3A16F3C413585EA7007BEF92 /* dA.icns */; };
 		3A16F3E213586000007BEF92 /* small_icon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3A16F3E113586000007BEF92 /* small_icon.tiff */; };
 		3A16F4311358637D007BEF92 /* StatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A16F42F1358637D007BEF92 /* StatusView.m */; };
-		3A3C7C4D1382F2280065C7CF /* OAuth2Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */; };
+		3A1928461480FABA00CF645A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1928451480FABA00CF645A /* Foundation.framework */; };
+		3A1928481480FB3400CF645A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1928471480FB3400CF645A /* SystemConfiguration.framework */; };
 		3A3C7C541382F25C0065C7CF /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C7C531382F25C0065C7CF /* JSON.framework */; };
 		3A4ACAA0139E75870085F090 /* stash-status-offline.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A4ACA9F139E75870085F090 /* stash-status-offline.tif */; };
 		3A555A431368752F000E8DE4 /* stash-status-busy.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A3E1368752F000E8DE4 /* stash-status-busy.tif */; };
@@ -20,15 +21,16 @@
 		3A555A461368752F000E8DE4 /* stash-status-idle.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A411368752F000E8DE4 /* stash-status-idle.tif */; };
 		3A555A471368752F000E8DE4 /* stash-status-uploading.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555A421368752F000E8DE4 /* stash-status-uploading.tif */; };
 		3A555B5B13688373000E8DE4 /* stash-status-empty.tif in Resources */ = {isa = PBXBuildFile; fileRef = 3A555B5A13688373000E8DE4 /* stash-status-empty.tif */; };
+		3A6F9A8A1480F4E70022FC3B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F9A891480F4E70022FC3B /* Reachability.m */; };
 		3A70E596139D13B4008E6153 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3A70E595139D13B4008E6153 /* dsa_pub.pem */; };
 		3A70E598139D13C3008E6153 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A70E597139D13C3008E6153 /* Sparkle.framework */; };
-		3A70E5B8139D147C008E6153 /* OAuth2Client.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */; };
 		3A70E5BE139D148B008E6153 /* JSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A3C7C531382F25C0065C7CF /* JSON.framework */; };
 		3A70E5C7139D148F008E6153 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A70E597139D13C3008E6153 /* Sparkle.framework */; };
 		3AA0A1ED135F158800850B37 /* JAProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0A1EC135F158800850B37 /* JAProcessInfo.m */; };
 		3AA0A3A2135F46CE00850B37 /* NSString+TruncateToWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0A3A1135F46CE00850B37 /* NSString+TruncateToWidth.m */; };
 		3AB50D88146830F200B2858D /* DeviantART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB50D87146830F200B2858D /* DeviantART.framework */; };
 		3AB50D931468377800B2858D /* DeviantART.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AB50D87146830F200B2858D /* DeviantART.framework */; };
+		3AB62A7A148105E400C18F68 /* OAuth2Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB62A79148105E400C18F68 /* OAuth2Client.framework */; };
 		3AF5B7AE14683BCD007103E6 /* deviantART Sta.sh Uploader.app in Resources */ = {isa = PBXBuildFile; fileRef = 3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */; };
 		3AF6DF6214696D5600EE9394 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AF6DF6114696D5600EE9394 /* LICENSE */; };
 		77C8280E06725ACE000B614F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* AppDelegate.m */; };
@@ -46,7 +48,6 @@
 			files = (
 				3A70E5C7139D148F008E6153 /* Sparkle.framework in CopyFiles */,
 				3A70E5BE139D148B008E6153 /* JSON.framework in CopyFiles */,
-				3A70E5B8139D147C008E6153 /* OAuth2Client.framework in CopyFiles */,
 				3AB50D931468377800B2858D /* DeviantART.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,15 +59,15 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* deviantART_Helper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deviantART_Helper_Prefix.pch; sourceTree = "<group>"; };
 		3A16F3C413585EA7007BEF92 /* dA.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = dA.icns; path = ../Resources/dA.icns; sourceTree = SOURCE_ROOT; };
 		3A16F3E113586000007BEF92 /* small_icon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = small_icon.tiff; path = ../Resources/small_icon.tiff; sourceTree = SOURCE_ROOT; };
 		3A16F42E1358637D007BEF92 /* StatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusView.h; sourceTree = "<group>"; };
 		3A16F42F1358637D007BEF92 /* StatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusView.m; sourceTree = "<group>"; };
 		3A16F43613586409007BEF92 /* OAuth2Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuth2Credentials.h; path = ../DO_NOT_PUBLISH/dAStashUploader/OAuth2Credentials.h; sourceTree = SOURCE_ROOT; };
-		3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2Client.framework; path = /Users/kouiskas/Documents/deviantArt/applications/OSX/Frameworks/OAuth2Client/build/Release/OAuth2Client.framework; sourceTree = "<absolute>"; };
+		3A19283C1480F94D00CF645A /* deviantART_Helper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deviantART_Helper_Prefix.pch; sourceTree = "<group>"; };
+		3A1928451480FABA00CF645A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A1928471480FB3400CF645A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A3C7C531382F25C0065C7CF /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "/Users/kouiskas/Documents/deviantArt/applications/OSX/Frameworks/JSON v2.3.1 (Mac)/build/Release/JSON.framework"; sourceTree = "<absolute>"; };
 		3A4ACA9F139E75870085F090 /* stash-status-offline.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-offline.tif"; path = "../Resources/stash-status-offline.tif"; sourceTree = SOURCE_ROOT; };
 		3A555A3E1368752F000E8DE4 /* stash-status-busy.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-busy.tif"; path = "../Resources/stash-status-busy.tif"; sourceTree = SOURCE_ROOT; };
@@ -75,6 +76,8 @@
 		3A555A411368752F000E8DE4 /* stash-status-idle.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-idle.tif"; path = "../Resources/stash-status-idle.tif"; sourceTree = SOURCE_ROOT; };
 		3A555A421368752F000E8DE4 /* stash-status-uploading.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-uploading.tif"; path = "../Resources/stash-status-uploading.tif"; sourceTree = SOURCE_ROOT; };
 		3A555B5A13688373000E8DE4 /* stash-status-empty.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "stash-status-empty.tif"; path = "../Resources/stash-status-empty.tif"; sourceTree = SOURCE_ROOT; };
+		3A6F9A881480F4E70022FC3B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../Frameworks/Reachability/Reachability.h; sourceTree = "<group>"; };
+		3A6F9A891480F4E70022FC3B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Frameworks/Reachability/Reachability.m; sourceTree = "<group>"; };
 		3A70E595139D13B4008E6153 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = ../Resources/dsa_pub.pem; sourceTree = SOURCE_ROOT; };
 		3A70E597139D13C3008E6153 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = /Users/kouiskas/Documents/deviantArt/applications/OSX/Frameworks/Sparkle.framework; sourceTree = "<absolute>"; };
 		3AA0A1EB135F158800850B37 /* JAProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAProcessInfo.h; path = ../Frameworks/JAProcessInfo/JAProcessInfo.h; sourceTree = SOURCE_ROOT; };
@@ -82,6 +85,7 @@
 		3AA0A3A0135F46CE00850B37 /* NSString+TruncateToWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TruncateToWidth.h"; sourceTree = "<group>"; };
 		3AA0A3A1135F46CE00850B37 /* NSString+TruncateToWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TruncateToWidth.m"; sourceTree = "<group>"; };
 		3AB50D87146830F200B2858D /* DeviantART.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviantART.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/DeviantART.framework"; sourceTree = "<group>"; };
+		3AB62A79148105E400C18F68 /* OAuth2Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2Client.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/OAuth2Client.framework"; sourceTree = "<group>"; };
 		3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "deviantART Sta.sh Uploader.app"; path = "../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug/deviantART Sta.sh Uploader.app"; sourceTree = "<group>"; };
 		3AF6DF6114696D5600EE9394 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../Resources/LICENSE; sourceTree = "<group>"; };
 		77C8280B06725ACE000B614F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,11 +99,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1928481480FB3400CF645A /* SystemConfiguration.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				3A3C7C4D1382F2280065C7CF /* OAuth2Client.framework in Frameworks */,
 				3A3C7C541382F25C0065C7CF /* JSON.framework in Frameworks */,
+				3AB62A7A148105E400C18F68 /* OAuth2Client.framework in Frameworks */,
 				3AB50D88146830F200B2858D /* DeviantART.framework in Frameworks */,
 				3A70E598139D13C3008E6153 /* Sparkle.framework in Frameworks */,
+				3A1928461480FABA00CF645A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,9 +129,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AB62A79148105E400C18F68 /* OAuth2Client.framework */,
 				3AB50D87146830F200B2858D /* DeviantART.framework */,
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				3A3C7C4C1382F2280065C7CF /* OAuth2Client.framework */,
 				3A3C7C531382F25C0065C7CF /* JSON.framework */,
 				3A70E597139D13C3008E6153 /* Sparkle.framework */,
 			);
@@ -135,7 +140,9 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				3A1928471480FB3400CF645A /* SystemConfiguration.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				3A1928451480FABA00CF645A /* Foundation.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
@@ -165,7 +172,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* deviantART_Helper_Prefix.pch */,
+				3A19283C1480F94D00CF645A /* deviantART_Helper_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -176,13 +183,13 @@
 			children = (
 				3AF6DF6114696D5600EE9394 /* LICENSE */,
 				3AF5B7AD14683BCD007103E6 /* deviantART Sta.sh Uploader.app */,
-				3A4ACA9F139E75870085F090 /* stash-status-offline.tif */,
 				3A70E595139D13B4008E6153 /* dsa_pub.pem */,
 				3A555B5A13688373000E8DE4 /* stash-status-empty.tif */,
 				3A555A3E1368752F000E8DE4 /* stash-status-busy.tif */,
 				3A555A3F1368752F000E8DE4 /* stash-status-click.tif */,
 				3A555A401368752F000E8DE4 /* stash-status-idle-color.tif */,
 				3A555A411368752F000E8DE4 /* stash-status-idle.tif */,
+				3A4ACA9F139E75870085F090 /* stash-status-offline.tif */,
 				3A555A421368752F000E8DE4 /* stash-status-uploading.tif */,
 				3A16F3E113586000007BEF92 /* small_icon.tiff */,
 				3A16F3C413585EA7007BEF92 /* dA.icns */,
@@ -205,6 +212,8 @@
 		3A16F3F71358622A007BEF92 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3A6F9A881480F4E70022FC3B /* Reachability.h */,
+				3A6F9A891480F4E70022FC3B /* Reachability.m */,
 				3AA0A1EB135F158800850B37 /* JAProcessInfo.h */,
 				3AA0A1EC135F158800850B37 /* JAProcessInfo.m */,
 			);
@@ -311,6 +320,7 @@
 				3A16F4311358637D007BEF92 /* StatusView.m in Sources */,
 				3AA0A1ED135F158800850B37 /* JAProcessInfo.m in Sources */,
 				3AA0A3A2135F46CE00850B37 /* NSString+TruncateToWidth.m in Sources */,
+				3A6F9A8A1480F4E70022FC3B /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,21 +351,18 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				CUSTOMVERSION = 1.37;
+				CUSTOMVERSION = 1.38;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Debug\"",
 					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Debug\"",
-					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Release\"",
-					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Release\"",
-					"\"$(SRCROOT)/../Frameworks\"",
+					"\"$(SRCROOT)/../Frameworks/\"",
+					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Debug\"",
 					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = deviantART_Helper_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -368,20 +375,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CUSTOMVERSION = 1.37;
+				CUSTOMVERSION = 1.38;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Debug\"",
 					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Debug\"",
-					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Release\"",
-					"\"$(SRCROOT)/../Frameworks/JSON v2.3.1 (Mac)/build/Release\"",
-					"\"$(SRCROOT)/../Frameworks\"",
+					"\"$(SRCROOT)/../Frameworks/\"",
+					"\"$(SRCROOT)/../Frameworks/OAuth2Client/build/Debug\"",
 					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/OSX-bdfzoenocdaxzwedfivhbhpzlsre/Build/Products/Debug\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = deviantART_Helper_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";

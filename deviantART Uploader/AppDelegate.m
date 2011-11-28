@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 #import "JAProcessInfo.h"
 #import "NSString+TruncateToWidth.h"
+#import "Reachability.h"
 
 /* OAuth2Credentials.h isn't provided as part of the source code, as it contains private OAuth2 
  credentials that shouldn't be published. The header defines OAUTH2_CLIENT_ID and OAUTH2_CLIENT_SECRET */
@@ -106,6 +107,13 @@
         [metadataQuery startQuery];
         
         screenshotsToUpload = [[NSMutableDictionary alloc] init];
+        
+        // Reachability
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+        
+        hostReach = [[Reachability reachabilityWithHostName: @"www.deviantart.com"] retain];
+        [hostReach startNotifier];
 	}
 	
 	return self;
@@ -124,6 +132,7 @@
     [metadataQuery setDelegate:nil];
     [metadataQuery release];
     [screenshotsToUpload release];
+    [hostReach release];
 	
     [super dealloc];
 }
@@ -201,8 +210,6 @@
 	} else {
 		[self loggedout];
 	}
-    
-    NSLog(@"Finished launching :|");
 }
 
 - (void) applicationWillTerminate:(NSNotification *)aNotification {
@@ -367,21 +374,19 @@
 }
 
 - (void) loggedin {
+    [uploadStatus setTitle:@"All files up to date"];
+    [statusView setToolTip:@"All files up to date"];
+    statusView.offline = NO;
+    [statusView setNeedsDisplay:YES];
 	[logoutButton setEnabled:YES];
 }
 
 - (void) loggedout {
+    [uploadStatus setTitle:@"Logged out"];
+    [statusView setToolTip:@"Logged out"];
+    statusView.offline = YES;
+    [statusView setNeedsDisplay:YES];
 	[logoutButton setEnabled:NO];
-}
-
-- (void) internetOnline {
-	statusView.offline = NO;
-	[statusView setNeedsDisplay:YES];
-}
-
-- (void) internetOffline {
-	statusView.offline = YES;
-	[statusView setNeedsDisplay:YES];
 }
 
 // Notifications coming from the main app
@@ -520,6 +525,33 @@
                 [dAStashUploader queueFileName:filePath folder: @"Screenshot Uploads"];
             }
         }
+    }
+}
+
+// Reachability
+
+- (void) reachabilityChanged:(NSNotification* )note {
+	Reachability* curReach = [note object];
+	NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+    
+    if ([curReach currentReachabilityStatus] == NotReachable) {
+        NSLog(@"Offline");
+        [uploadStatus setTitle:@"Offline"];
+        [statusView setToolTip:@"Offline"];
+        statusView.offline = YES;
+        [statusView setNeedsDisplay:YES];
+    } else {
+        NSLog(@"Online");
+        if ([dAStashUploader isLoggedIn]) {
+            [uploadStatus setTitle:@"All files up to date"];
+            [statusView setToolTip:@"All files up to date"];
+            statusView.offline = NO;
+        } else {
+            [uploadStatus setTitle:@"Logged out"];
+            [statusView setToolTip:@"Logged out"];
+            statusView.offline = YES;            
+        }
+        [statusView setNeedsDisplay:YES];
     }
 }
 

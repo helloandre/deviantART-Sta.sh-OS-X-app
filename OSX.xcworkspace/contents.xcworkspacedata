@@ -8,9 +8,12 @@
       location = "group:Dock Helper/deviantART Sta.sh Uploader.xcodeproj">
    </FileRef>
    <FileRef
+      location = "container:deviantArtExporter/deviantARTExporter.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Frameworks/DeviantART/DeviantART.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:deviantArtExporter/deviantARTExporter.xcodeproj">
+      location = "group:Frameworks/OAuth2Client/OAuth2Client.xcodeproj">
    </FileRef>
 </Workspace>
